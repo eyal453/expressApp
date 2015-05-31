@@ -9,6 +9,6 @@ module.exports = {
 		return res.json({ deleted: true, book_id: req.params.id });
 	},
 	patch: function (req, res) {
-		return res.json({ patched: true, book_id: req.params.id });
+		return res.json({ patched: true, book_id: req.params.id, stam: true });
 	}
 };
