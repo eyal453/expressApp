@@ -4,5 +4,8 @@ module.exports = {
 	},
 	post: function (req, res) {
 		return res.json({ message: "You just send this json", req_body: req.body });
+	},
+	delete: function (req, res) {
+		return res.json({ deleted: true });
 	}
 };
