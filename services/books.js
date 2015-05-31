@@ -6,9 +6,9 @@ module.exports = {
 		return res.json({ message: "You just send this json", req_body: req.body });
 	},
 	delete: function (req, res) {
-		return res.json({ deleted: true });
+		return res.json({ deleted: true, book_id: req.params.id });
 	},
 	patch: function (req, res) {
-		return res.json({ patched: true });
+		return res.json({ patched: true, book_id: req.params.id });
 	}
 };
