@@ -7,5 +7,8 @@ module.exports = {
 	},
 	delete: function (req, res) {
 		return res.json({ deleted: true });
+	},
+	patch: function (req, res) {
+		return res.json({ patched: true });
 	}
 };
