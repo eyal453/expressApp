@@ -1,6 +1,6 @@
 /// <reference path="typings/node/node.d.ts"/>
-/// <reference path="../typings/express/express.d.ts"/>
-/// <reference path="../typings/body-parser/body-parser.d.ts"/>
+/// <reference path="typings/express/express.d.ts"/>
+/// <reference path="typings/body-parser/body-parser.d.ts"/>
 
 var express = require('express');
 var app = express();
