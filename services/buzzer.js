@@ -11,7 +11,7 @@ module.exports = function (router, basePath) {
 			if (isBuzzing) {
 				return res.status(400).send("Buzzing already");
 			}
-			buzzing = true;
+			isBuzzing = true;
 			var pin4 = gpio.export(4, {
 				direction: "out",
 				interval: 200,
@@ -19,7 +19,7 @@ module.exports = function (router, basePath) {
 					pin4.set(1);
 					setTimeout(function () {
 						pin4.set(0);
-						buzzing = false;
+						isBuzzing = false;
 					}, 2000)
 				}
 			});
