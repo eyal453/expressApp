@@ -6,10 +6,12 @@ module.exports = function (router, basePath) {
 		var action = req.params.action;
 		if (action == "buzz") {
 			var pin = new GpioPin(4);
-			pin.open('out').then(pin.high);
-			setTimeout(function () {
-				pin.low();
-			}, 2000);
+			pin.open('out').then(function () {
+				pin.set(1);
+			});
+			//setTimeout(function () {
+			//	pin.set(0);
+			//}, 5000);
 			res.status(200).send("Buzzing door");
 			return;
 		}
