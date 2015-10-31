@@ -5,9 +5,18 @@ module.exports = function (router, basePath) {
 	
 	var isBuzzing = false;
 	
+	function isPositiveInteger(n) {
+		return 0 === n % (!isNaN(parseFloat(n)) && 0 <= ~~n);
+	}
+	
 	function post(req, res) {
 		var action = req.params.action;
-		var seconds = req.params.seconds || 2;
+		var seconds = 2;
+		if (isPositiveInteger(req.params.seconds)) {
+			var secondsVal = req.params.seconds * 1;
+			seconds = secondsVal > 0?secondsVal :seconds;
+		}
+		
 		if (action == "buzz") {
 			if (isBuzzing) {
 				return res.status(400).send("Buzzing already");
