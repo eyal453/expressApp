@@ -1,17 +1,18 @@
 module.exports = function (router, basePath) {
 	
-	var GpioPin = require("gpio-promise");
+	//var GpioPin = require("gpio-promise");
+	var gpio = require("gpio");
 	
 	function post(req, res) {
 		var action = req.params.action;
 		if (action == "buzz") {
-			var pin = new GpioPin(4);
-			pin.open('out').then(function () {
-				pin.set(1);
+			var pin4 = gpio.export(4, {
+				direction: "out",
+				interval: 200,
+				ready: function () {
+					pin4.set(1);
+				}
 			});
-			//setTimeout(function () {
-			//	pin.set(0);
-			//}, 5000);
 			res.status(200).send("Buzzing door");
 			return;
 		}
