@@ -8,7 +8,7 @@ module.exports = function (router, basePath) {
 			var pin = new GpioPin(4);
 			pin.open('out').then(pin.high);
 			setTimeout(function () {
-				pin.low().then(pin.close());
+				pin.low();
 			}, 2000);
 			res.status(200).send("Buzzing door");
 			return;
