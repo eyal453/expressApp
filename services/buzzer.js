@@ -11,6 +11,9 @@ module.exports = function (router, basePath) {
 				interval: 200,
 				ready: function () {
 					pin4.set(1);
+					setTimeout(function () {
+						pin4.set(0);
+					}, 2000)
 				}
 			});
 			res.status(200).send("Buzzing door");
