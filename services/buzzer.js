@@ -7,6 +7,7 @@ module.exports = function (router, basePath) {
 	
 	function post(req, res) {
 		var action = req.params.action;
+		var seconds = req.params.seconds || 2;
 		if (action == "buzz") {
 			if (isBuzzing) {
 				return res.status(400).send("Buzzing already");
@@ -20,7 +21,7 @@ module.exports = function (router, basePath) {
 					setTimeout(function () {
 						pin4.set(0);
 						isBuzzing = false;
-					}, 2000)
+					}, seconds * 1000)
 				}
 			});
 			res.status(200).send("Buzzing door");
@@ -36,7 +37,7 @@ module.exports = function (router, basePath) {
 	
 	
 	function register() {
-		router.post(basePath + "/:action", post);
+		router.post(basePath + "/:action/:seconds?", post);
 	}
 	
 	return {
