@@ -1,6 +1,6 @@
 module.exports = function (router, basePath) {
 
-	var GpioPin = require("gpio-promise");
+	//var GpioPin = require("gpio-promise");
 
 	function post(req, res) {
 		var action = req.params.action;
