@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/eyal453/expressApp/issues"
   },
-  "homepage": "https://github.com/eyal453/expressApp"
+  "homepage": "https://github.com/eyal453/expressApp",
+  "devDependencies": {
+    "gpio-promise": "^1.1.2"
+  }
 }
