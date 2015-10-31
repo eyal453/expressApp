@@ -5,11 +5,11 @@ module.exports = function (router, basePath) {
 	function post(req, res) {
 		var action = req.params.action;
 		if (action == "buzz") {
-			 var pin = new GpioPin(4);
-			 pin.open('out').then(pin.high);
-			 setTimeout(function () {
-			 	pin.low().then(pin.close());
-			 });
+			var pin = new GpioPin(4);
+			pin.open('out').then(pin.high);
+			setTimeout(function () {
+				pin.low().then(pin.close());
+			}, 2000);
 			res.status(200).send("Buzzing door");
 			return;
 		}
