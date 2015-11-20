@@ -20,7 +20,7 @@ module.exports = function (router, basePath) {
 	function buzz(req, res) {
 		var action = req.params.action;
 		var isStop = action == 'stop';
-		var seconds = 20;
+		var seconds = 6;
 		var reply = isStop ? 'stopping buzzer' : 'buzzing door';
 		if (isBuzzing && !isStop) {
 			//not a stop command and currently buzzing so get out
