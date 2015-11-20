@@ -27,7 +27,7 @@ module.exports = function (grunt) {
                         src: [
                             'bootstrap/dist/css/*.*'
                         ],
-                        dest: 'public/css',
+                        dest: 'public/styles',
                     },
                     {
                         cwd: 'bower_components/',
@@ -36,7 +36,7 @@ module.exports = function (grunt) {
                         src: [
                             'bootstrap/dist/fonts/*.*'
                         ],
-                        dest: 'public/css/fonts',
+                        dest: 'public/styles/fonts',
                     }
                 ]
             }
@@ -66,7 +66,7 @@ module.exports = function (grunt) {
                     paths: ["public/styles/**/*.less"]
                 },
                 files: {
-                    "public/styles/app.css": "public/styles/app.less"
+                    "public/styles/main.css": "public/styles/main.less"
                 }
             }
 

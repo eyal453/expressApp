@@ -8,4 +8,8 @@ angular.module('buzzer')
 
 				});
 		}
+		
+		this.hold = function(){
+			console.log("holding");
+		}
 	}]);
