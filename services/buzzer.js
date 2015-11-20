@@ -5,7 +5,7 @@ module.exports = function (router, basePath) {
 	var pin4 = gpio.export(4, {
 		direction: "out",
 		interval: 200,
-		ready: function(){
+		ready: function () {
 			pin4.set(0);
 		}
 	});
@@ -19,7 +19,8 @@ module.exports = function (router, basePath) {
 	function buzz(req, res) {
 		var action = req.params.action;
 		var seconds = 20;
-		if (isBuzzing) {
+		if (isBuzzing && action != 'stop') {
+			//not a stop command and currently buzzing so get out
 			return res.status(400).send("Buzzing already");
 		}
 		isBuzzing = true;
