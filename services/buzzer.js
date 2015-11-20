@@ -27,6 +27,7 @@ module.exports = function (router, basePath) {
 		}
 		var worker;
 		if (isStop) {
+			isBuzzing = false;
 			worker = function () {
 				pin4.set(0);
 			}
