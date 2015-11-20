@@ -24,6 +24,7 @@
   "devDependencies": {
     "bootstrap": "^3.3.5",
     "bower": "^1.6.5",
+    "cors": "^2.7.1",
     "gpio": "^0.2.7",
     "gpio-promise": "^1.1.2",
     "grunt": "^0.4.5",

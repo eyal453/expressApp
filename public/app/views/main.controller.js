@@ -1,4 +1,11 @@
 angular.module('buzzer')
-	.controller('mainController', ['$scope', function ($scope) {
-		this.meow = "asdadasdad";
+	.controller('mainController', ['apiService', function (apiService) {
+		this.buzz = function (stop) {
+			apiService.buzz(stop).then(
+				function () {
+
+				}, function () {
+
+				});
+		}
 	}]);
