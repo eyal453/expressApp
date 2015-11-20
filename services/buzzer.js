@@ -25,13 +25,13 @@ module.exports = function (router, basePath) {
 			//not a stop command and currently buzzing so get out
 			return res.status(400).send("Buzzing already");
 		}
-		isBuzzing = true;
 		var worker;
 		if (isStop) {
 			worker = function () {
 				pin4.set(0);
 			}
 		} else {
+			isBuzzing = true;
 			worker = function () {
 				pin4.set(1);
 				setTimeout(function () {
