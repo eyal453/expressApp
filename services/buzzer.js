@@ -51,7 +51,7 @@ module.exports = function (router, basePath) {
 	}
 
 	function register() {
-		router.post(basePath + "/buzz/:action", buzz);
+		router.post(basePath + "/buzz/:action?", buzz);
 		router.post(basePath + "/ring", ring);
 	}
 
