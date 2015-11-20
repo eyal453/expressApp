@@ -9,6 +9,7 @@ module.exports = function (router, basePath) {
 			pin4.set(0);
 		}
 	});
+	var to;
 
 	var isBuzzing = false;
 
@@ -26,6 +27,7 @@ module.exports = function (router, basePath) {
 			return res.status(400).send("Buzzing already");
 		}
 		var worker;
+		clearTimeout(to);
 		if (isStop) {
 			isBuzzing = false;
 			worker = function () {
@@ -35,7 +37,7 @@ module.exports = function (router, basePath) {
 			isBuzzing = true;
 			worker = function () {
 				pin4.set(1);
-				setTimeout(function () {
+				to = setTimeout(function () {
 					pin4.set(0);
 					isBuzzing = false;
 				}, seconds * 1000)

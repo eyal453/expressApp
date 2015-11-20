@@ -11,7 +11,9 @@ module.exports = function (grunt) {
                         expand: true,
                         flatten: true,
                         src: [
+                            'hammerjs/hammer.min.js',
                             'angular/angular*.js',
+                            'angular-gestures/*.js',
                             'angular-ui-router/release/angular-ui-router*.js',
                             'jquery/dist/jquery*.js',
                             'bootstrap/dist/js/bootstrap*.js'
