@@ -53,9 +53,8 @@ module.exports = function (grunt) {
                         'public/app/app.js',
                         'public/app/services/*.js',
                         'public/app/filters/*.js',
-                        'public/app/controllers/*.js',
-                        'public/app/components/**/*',
-                        'public/app/views/**/*',
+                        'public/app/views/*.js',
+                        'public/app/directives/**/*',
                         'public/styles/**/*.css']
                 }
             }

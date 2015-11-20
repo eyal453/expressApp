@@ -1,5 +1,10 @@
 <button class="buzzer btn btn-success" 
-ng-mousedown="vm.buzz()" 
-hm-tap="vm.buzz()"
+hold-release
+hold-callback='vm.buzz()'
+release-callback='vm.buzz(true)'
+>BUZZ</button>
+
+<!--ng-mousedown="vm.buzz()" 
+hm-hold="vm.buzz()"
 ng-mouseup="vm.buzz(true)"
-hm-release="vm.buzz(true)">BUZZ</button>
+hm-release="vm.buzz(true)"-->
