@@ -1,0 +1,24 @@
+{
+  "name": "expressApi",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "eyal453 <eyale@outlook.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/eyal453/expressApp",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "~1.4.8",
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.5",
+    "angular-ui-router": "~0.2.15"
+  }
+}
