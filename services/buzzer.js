@@ -18,7 +18,7 @@ module.exports = function (router, basePath) {
 
 	function buzz(req, res) {
 		var action = req.params.action;
-		var seconds = 5;
+		var seconds = 20;
 		if (isBuzzing) {
 			return res.status(400).send("Buzzing already");
 		}
