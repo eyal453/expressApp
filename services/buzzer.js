@@ -18,14 +18,16 @@ module.exports = function (router, basePath) {
 
 	function buzz(req, res) {
 		var action = req.params.action;
+		var isStop = action == 'stop';
 		var seconds = 20;
-		if (isBuzzing && action != 'stop') {
+		var reply = isStop ? 'stopping buzzer' : 'buzzing door';
+		if (isBuzzing && !isStop) {
 			//not a stop command and currently buzzing so get out
 			return res.status(400).send("Buzzing already");
 		}
 		isBuzzing = true;
 		var worker;
-		if (action == 'stop') {
+		if (isStop) {
 			worker = function () {
 				pin4.set(0);
 			}
@@ -44,7 +46,7 @@ module.exports = function (router, basePath) {
 			interval: 200,
 			ready: worker
 		});
-		res.status(200).send("Buzzing door");
+		res.status(200).send(reply);
 	}
 
 	function ring(req, res) {
