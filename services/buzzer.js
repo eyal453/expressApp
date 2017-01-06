@@ -6,14 +6,14 @@ module.exports = function (router, basePath) {
 		direction: "out",
 		interval: 200,
 		ready: function () {
-			pin23.set(0);
+			pin23.set(1);
 		}
 	});
 	var pin24 = gpio.export(24, {
 		direction: "out",
 		interval: 200,
 		ready: function () {
-			pin24.set(0);
+			pin24.set(1);
 		}
 	});
 	var to;
@@ -21,8 +21,8 @@ module.exports = function (router, basePath) {
 	var isBuzzing = false;
 
 	function setOnOff(on) {
-		pin23.set(on ? 1 : 0);
-		pin24.set(on ? 1 : 0);
+		pin23.set(on ? 0 : 1);
+		pin24.set(on ? 0 : 1);
 	}
 
 	function isPositiveInteger(n) {
