@@ -1,7 +1,7 @@
 angular.module('buzzer')
 	.factory('apiService', ['$http', '$q',
 		function ($http, $q) {
-			var apiUrl = 'http://192.168.1.7:8080/api/buzzer/';
+			var apiUrl = 'http://192.168.1.30:8080/api/buzzer/';
 
 			function buzz(stop) {
 				var url = apiUrl + 'buzz'

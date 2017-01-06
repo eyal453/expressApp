@@ -1,17 +1,29 @@
 module.exports = function (router, basePath) {
-	
+
 	//var GpioPin = require("gpio-promise");
 	var gpio = require("gpio");
-	var pin4 = gpio.export(4, {
+	var pin23 = gpio.export(23, {
 		direction: "out",
 		interval: 200,
 		ready: function () {
-			pin4.set(0);
+			pin23.set(0);
+		}
+	});
+	var pin24 = gpio.export(24, {
+		direction: "out",
+		interval: 200,
+		ready: function () {
+			pin24.set(0);
 		}
 	});
 	var to;
 
 	var isBuzzing = false;
+
+	function setOnOff(on) {
+		pin23.set(on ? 1 : 0);
+		pin24.set(on ? 1 : 0);
+	}
 
 	function isPositiveInteger(n) {
 		return 0 === n % (!isNaN(parseFloat(n)) && 0 <= ~~n);
@@ -31,20 +43,20 @@ module.exports = function (router, basePath) {
 		if (isStop) {
 			isBuzzing = false;
 			worker = function () {
-				pin4.set(0);
+				setOnOff(false);
 			}
 		} else {
 			isBuzzing = true;
 			worker = function () {
-				pin4.set(1);
+				setOnOff(true);
 				to = setTimeout(function () {
-					pin4.set(0);
+					setOnOff(false);
 					isBuzzing = false;
 				}, seconds * 1000)
 			}
 		}
 
-		pin4 = gpio.export(4, {
+		pin23 = gpio.export(4, {
 			direction: "out",
 			interval: 200,
 			ready: worker
