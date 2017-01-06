@@ -9,20 +9,21 @@ body {
 .main .header {
   background-color: #121212;
   box-shadow: 0 2px 8px #333;
+  padding: 15px;
 }
 .main .header h1 {
   color: #fff;
   text-align: center;
   text-transform: uppercase;
   margin: 0;
-  font-size: 3em;
-  line-height: 80px;
+  font-size: 2em;
 }
 .main .buzzer-page {
   width: 100%;
 }
 .main .buzzer-page button.buzzer {
-  transition: all 0.2s;
+  outline: none;
+  transition: all .2s;
   -moz-box-shadow: 0 10px 14px -7px #276873;
   -webkit-box-shadow: 0 10px 14px -7px #276873;
   box-shadow: 0 10px 14px -7px #276873;
