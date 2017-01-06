@@ -56,7 +56,12 @@ module.exports = function (router, basePath) {
 			}
 		}
 
-		pin23 = gpio.export(4, {
+		pin23 = gpio.export(23, {
+			direction: "out",
+			interval: 200,
+			ready: worker
+		});
+		pin24 = gpio.export(24, {
 			direction: "out",
 			interval: 200,
 			ready: worker
