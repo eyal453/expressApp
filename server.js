@@ -3,10 +3,12 @@
 /// <reference path="typings/body-parser/body-parser.d.ts"/>
 
 var express = require('express');
+var compression = require('compression');
 var cors = require('cors');
 var app = express();
 var bodyParser = require('body-parser');
 
+app.use(compression());
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
