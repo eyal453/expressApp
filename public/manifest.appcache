@@ -1,0 +1,15 @@
+CACHE MANIFEST
+
+CACHE:
+index.html
+scripts/jquery.min.js
+scripts/hammer.min.js
+scripts/angular.min.js
+scripts/angular-ui-router.min.js
+scripts/gestures.min.js
+styles/bootstrap.min.css
+styles/main.css
+
+NETWORK:
+/api
+/app
